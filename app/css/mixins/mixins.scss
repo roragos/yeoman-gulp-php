@@ -1,0 +1,159 @@
+/**
+ * Mixins gerais
+ * @author 	Rogério Agostini
+ * @link 	http://sass-lang.com/
+ */
+
+
+@mixin background-size($size: cover) {
+	-webkit-background-size: $size;
+	   -moz-background-size: $size;
+	     -o-background-size: $size;
+	        background-size: $size;
+}
+
+@mixin background-attrs($repeat: no-repeat, $attach: fixed, $position: center center) {
+	background-repeat: $repeat;
+	background-attachment: $attach;
+	background-position: $position;
+}
+
+@mixin ra-font-default() {
+	font-family: $font-family-01;
+}
+
+@mixin ra-transition($transition: $transition-01) {
+	-webkit-transition: $transition; 
+	   -moz-transition: $transition; 
+	     -o-transition: $transition; 
+	        transition: $transition; 
+}
+
+@mixin ra-text-shadow($textShadow: $text-shadow-01) {
+	text-shadow: $textShadow;
+}
+
+@mixin ra-box-shadow($boxShadow: 0px 0px 46px #000000) {
+	-webkit-box-shadow: $boxShadow;
+	   -moz-box-shadow: $boxShadow;
+	        box-shadow: $boxShadow;
+}
+
+@mixin ra-width-calc($calc: $calc-01) {
+	width: calc($calc); 
+	width: -webkit-calc($calc); 
+	width: -moz-calc($calc);
+	width: -o-calc($calc);
+}
+
+@mixin ra-margin-left-calc($calc: $calc-02) {
+	margin-left: calc($calc); 
+	margin-left: -webkit-calc($calc); 
+	margin-left: -moz-calc($calc);
+	margin-left: -o-calc($calc);
+}
+
+@mixin ra-hover-effect-01($degrees: $degrees-01, $scale: $scale-01) {
+	-webkit-transform: rotate($degrees) scale($scale); 
+	   -moz-transform: rotate($degrees) scale($scale); 
+	    -ms-transform: rotate($degrees) scale($scale); 
+	     -o-transform: rotate($degrees) scale($scale); 
+	        transform: rotate($degrees) scale($scale);
+}
+
+@mixin ra-opacity($opacity) {
+	opacity: $opacity;
+	// IE8 filter
+	$opacity-ie: ($opacity * 100);
+	filter: alpha(opacity=$opacity-ie);
+}
+
+@mixin ra-translate($left: $x, $top: $y) {
+	-webkit-transform: translate($left, $top); 
+	   -moz-transform: translate($left, $top); 
+	    -ms-transform: translate($left, $top); 
+	     -o-transform: translate($left, $top); 
+	        transform: translate($left, $top);
+}
+
+@mixin ra-scale($scale: $scale-02) {
+	-webkit-transform: scale($scale); 
+	   -moz-transform: scale($scale); 
+	     -o-transform: scale($scale); 
+	    -ms-transform: scale($scale); 
+	        transform: scale($scale);
+}
+
+@mixin ra-columns($count: 2, $gap: 25px, $border: $border01) {
+	-webkit-column-count: $count;
+	   -moz-column-count: $count;
+	    -ms-column-count: $count;
+	     -o-column-count: $count;
+	        column-count: $count;
+	
+	-webkit-column-gap: $gap;
+	   -moz-column-gap: $gap;
+	    -ms-column-gap: $gap;
+	     -o-column-gap: $gap;
+	        column-gap: $gap;
+	
+	-webkit-column-rule: $border;
+	   -moz-column-rule: $border;
+	    -ms-column-rule: $border;
+	     -o-column-rule: $border;
+	        column-rule: $border;
+}
+
+@mixin ra-border-radius($tl: 5px, $tr: 5px, $br: 5px, $bl: 5px) {
+	-webkit-border-radius: $tl $tr $br $bl;
+	   -moz-border-radius: $tl $tr $br $bl;
+	     -o-border-radius: $tl $tr $br $bl;
+	        border-radius: $tl $tr $br $bl;
+}
+
+
+@mixin element-animation ($animation: animationFrames linear 1.0s, $transform: 50% 50%, $count: infinite) {
+	animation: $animation;
+	transform-origin: $transform;
+	animation-iteration-count: infinite;
+
+	-webkit-animation: $animation;
+	   -moz-animation: $animation;
+	    -ms-animation: $animation;
+	     -o-animation: $animation;
+	
+	-webkit-animation-iteration-count: infinite;
+	   -moz-animation-iteration-count: infinite;
+	    -ms-animation-iteration-count: infinite;
+	     -o-animation-iteration-count: infinite;
+	
+	-webkit-transform-origin: $transform;
+	   -moz-transform-origin: $transform;
+	    -ms-transform-origin: $transform;
+	     -o-transform-origin: $transform;
+}
+
+@keyframes animationFrames{
+	0% {transform:  rotate(-360deg);}
+	100% {transform:  rotate(0deg);}
+}
+
+@-moz-keyframes animationFrames{
+	0% {-moz-transform:  rotate(-360deg);}
+	100% {-moz-transform:  rotate(0deg);}
+}
+
+@-webkit-keyframes animationFrames {
+	0% {-webkit-transform:  rotate(-360deg);}
+	100% {-webkit-transform:  rotate(0deg);}
+}
+
+@-o-keyframes animationFrames {
+	0% {-o-transform:  rotate(-360deg);}
+	100% {-o-transform:  rotate(0deg);}
+}
+
+@-ms-keyframes animationFrames {
+	0% {-ms-transform:  rotate(-360deg);}
+	100% {-ms-transform:  rotate(0deg);}
+}
